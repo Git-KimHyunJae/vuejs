@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <app-header v-bind:propsdata="message"></app-header>
+        <app-footer></app-footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    Vue.component('app-header',{
+        props:['propsdata'],
+        template:'<div>{{propsdata}}</div>'
+    })
+    new Vue({
+        el:'#app',
+        data:{
+            message:'Hello Vue Js'
+        },
+        components:{
+            'app-footer':{
+                template:'<div>앱푸터 지역 컴포넌트</div>'
+            }
+        }
+    })
+</script>
+</body>
+</html>
